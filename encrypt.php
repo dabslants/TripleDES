@@ -6,7 +6,7 @@
 
     class OKEncrypt {
 
-        public static function encrypt3Des($data, $secret) {
+        public static function encrypt($data, $secret) {
             //Generate a key from a hash
             $key = md5(utf8_encode($secret), true);
 
@@ -27,7 +27,7 @@
             return base64_encode($encData);
         }
 
-        public static function decrypt3Des($data, $secret) {
+        public static function decrypt($data, $secret) {
            //Generate a key from a hash
            $key = md5(utf8_encode($secret), true);
 
@@ -44,39 +44,5 @@
 
            return substr($data, 0, strlen($data) - $pad);
        }
-
-       public static function encrypt_array($data, $enc_key, $skip=null) {
-           $encrypted = [];
-
-           if (is_array($data)) {
-               foreach ($data as $key => $value) {
-                   if (in_array($key, $skip)) continue;
-                   OKEncrypt::encrypt_array($value);
-               }
-           }
-
-           if (!$encrypt = OKEncrypt::encrpt3Des($value, $enc_key)) {
-               $encrypt = $value;
-           }
-           return $encrypt;
-       }
-
-       public static function decrypt_array($data, $enc_key, $skip=null) {
-           $decrypted = [];
-
-           if (is_array($data)) {
-               foreach ($data as $key => $value) {
-                   if (in_array($key, $skip)) continue;
-                   OKEncrypt::decrypt_array($value);
-               }
-           }
-
-           if (!$decrypt = OKEncrypt::decrpt3Des($data, $enc_key)) {
-               $decrypt = $data;
-           }
-
-           return $decrypt;
-       }
-
 
     }
