@@ -24,7 +24,6 @@ use OK\OKEncrypt;
 
 ### Encrypt Data
 ```php
-
 // encrypt string
 $data = 4;
 $key = 'mykey';
@@ -34,16 +33,15 @@ OKEncrypt::encrypt($data, $key);
 $data = ['Dabs', 0200', March-2016'];
 $key = 'mykey';
 $enc = OKEncrypt::encrypt($data, $key);
-```
-
-### Encrypt with Skip
-```php
 
 // encrypt associative array
 $assoc_data = ['name'=>'Dabs','time'=>'0200','date'=>'March-2016'];
 $key = 'mykey';
 $enc = OKEncrypt::encrypt($data, $key);
+```
 
+### Encrypt with Skip
+```php
 // encrypt associative array but skip an element using array values
 $data = ['Dabs', 0200', March-2016'];
 $key = 'mykey';
