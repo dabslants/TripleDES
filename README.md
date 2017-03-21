@@ -34,6 +34,7 @@ OKEncrypt::encrypt($data, $key);
 $data = ['Dabs', 0200', March-2016'];
 $key = 'mykey';
 $enc = OKEncrypt::encrypt($data, $key);
+```
 
 ### Encrypt with Skip
 ```php
