@@ -33,5 +33,5 @@ OKEncrypt::encrypt($data, $key);
 ```php
 $data = 'result-string-from-encrypt';
 $key = 'mykey';
-OKEncrypt::encrypt($data, $key);
+OKEncrypt::decrypt($data, $key);
 ```
