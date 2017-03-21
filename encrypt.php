@@ -8,8 +8,10 @@
 
         /**
          * TripleDES Encryption
+         *
          * @param  string $data   string to be encrypted
          * @param  string $secret encryption secret key
+         *
          * @return bool | string    false => on failure OR encrypted string => on success
          */
         public static function encrypt3Des($data, $secret) {
@@ -35,8 +37,10 @@
 
         /**
          * TripleDES Decryption
+         *
          * @param  string $data   string to be decrypted
          * @param  string $secret encryption secret key
+         *
          * @return bool | string    false => on failure OR encrypted string => on success
          */
         public static function decrypt3Des($data, $secret) {
