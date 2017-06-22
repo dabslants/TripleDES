@@ -27,7 +27,7 @@ use OK\OKEncrypt;
 // encrypt string
 $data = 4;
 $key = 'mykey';
-OKEncrypt::encrypt($data, $key);
+$enc = OKEncrypt::encrypt($data, $key);
 
 // encrypt array
 $data = ['Dabs', 0200', March-2016'];
@@ -46,7 +46,7 @@ $enc = OKEncrypt::encrypt($data, $key);
 $data = ['Dabs', 0200', March-2016'];
 $key = 'mykey';
 $skip = 'date';
-$enc = OKEncrypt::encrypt($data, $key, $skip);
+$menc = OKEncrypt::encrypt($data, $key, $skip);
 
 // encrypt associative array but skip multiple element using array values
 $data = ['Dabs', 0200', March-2016'];
@@ -58,7 +58,7 @@ $menc = OKEncrypt::encrypt($data, $key, $skip);
 $data = ['name'=>'Dabs','time'=>'0200','date'=>'March-2016'];
 $key = 'mykey';
 $skip = 'date';
-$enc = OKEncrypt::encrypt($data, $key, $skip);
+$menc = OKEncrypt::encrypt($data, $key, $skip);
 
 // encrypt associative array but skip multiple element using array keys
 $data = ['name'=>'Dabs','time'=>'0200','date'=>'March-2016'];
@@ -73,10 +73,10 @@ $menc = OKEncrypt::encrypt($data, $key, $skip);
 // decrypt array or string
 $data = $enc;   // result of encrypted data string or array
 $key = 'mykey';
-OKEncrypt::encrypt($data, $key);
+$enc = OKEncrypt::encrypt($data, $key); // encrypted data
 
 // decrypt array but skip an element
-$data = $menc;   // result of encrypted data  array
+$data = $enc;   // result of encrypted data array
 $key = 'mykey';
 $skip = 'date';
 OKEncrypt::encrypt($data, $key);
