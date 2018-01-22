@@ -30,7 +30,7 @@ $key = 'mykey';
 $enc = OKEncrypt::encrypt($data, $key);
 
 // encrypt array
-$data = ['Dabs', 0200', March-2016'];
+$data = ['Dabs', '0200', March-2016'];
 $key = 'mykey';
 $enc = OKEncrypt::encrypt($data, $key);
 
@@ -43,13 +43,13 @@ $enc = OKEncrypt::encrypt($data, $key);
 ### Encrypt with Skip
 ```php
 // encrypt associative array but skip an element using array values
-$data = ['Dabs', 0200', March-2016'];
+$data = ['Dabs', '0200', March-2016'];
 $key = 'mykey';
 $skip = 'Dabs';
 $menc = OKEncrypt::encrypt($data, $key, $skip);
 
 // encrypt associative array but skip multiple element using array values
-$data = ['Dabs', 0200', March-2016'];
+$data = ['Dabs', '0200', March-2016'];
 $key = 'mykey';
 $skip = ['dabs', '0200'];
 $menc = OKEncrypt::encrypt($data, $key, $skip);
@@ -84,7 +84,7 @@ OKEncrypt::decrypt($data, $key);
 ### Decrypt with Skip
 ```php
 // encrypt associative array but skip an element using array values
-$data = ['Dabs', 0200', March-2016'];
+$data = ['Dabs', '0200', March-2016'];
 $key = 'mykey';
 $skip = 'Dabs';
 $menc = OKEncrypt::encrypt($data, $key, $skip);
